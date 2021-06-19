@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         height: 50,
         borderRadius: 10,
         margin: 50,
-        //padding: "3%",
+        padding: "1%",
         borderRadius: 20,
         flexDirection: "row"
     },
