@@ -1,21 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+//MODULES
+import { StatusBar } from 'expo-status-bar'
+import * as React from 'react';
+import { StyleSheet, View, Button, Text, Animated } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+import { createBottomTabNavigator, createAppContainer } from 'react-navigation'
+import 'react-native-gesture-handler';
+
+//EXPORTS → IMPORTS
+import SearchScreen from './src/screens/SearchScreen'
+
+//MAIN
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>{
+      <Stack.Navigator initialRouteName="SearchScreen">
+
+        <Stack.Screen name="Search Screen" component={SearchScreen} />
+
+      </Stack.Navigator>
+    }</NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
