@@ -1,4 +1,4 @@
-//MODULES
+//MODULES + LIBRARIES
 import { StatusBar } from 'expo-status-bar'
 import * as React from 'react';
 import { StyleSheet, View, Button, Text, Animated } from 'react-native'
@@ -10,7 +10,8 @@ import 'react-native-gesture-handler';
 //EXPORTS → IMPORTS
 import SearchScreen from './src/screens/SearchScreen'
 
-//MAIN
+
+//BODY
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -24,4 +25,3 @@ export default function App() {
     }</NavigationContainer>
   );
 }
-
