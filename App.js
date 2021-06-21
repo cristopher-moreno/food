@@ -9,12 +9,11 @@ import 'react-native-gesture-handler';
 
 //EXPORTS → IMPORTS
 import SearchScreen from './src/screens/SearchScreen'
-
-
 //BODY
 const Stack = createStackNavigator();
 
 export default function App() {
+
   return (
     <NavigationContainer>{
       <Stack.Navigator initialRouteName="SearchScreen">
