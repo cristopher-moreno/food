@@ -31,7 +31,7 @@ const SearchScreen = () => {
 const styles = StyleSheet.create({})
 
 //EXPORT
-export default SearchScreen
+export default (SearchScreen)
 
 
 
