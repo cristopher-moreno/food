@@ -1,9 +1,11 @@
 import axios from 'axios'
 import { KEY } from '@env'
 
-export default (axios.create({
+export default axios.create({
     baseURL: 'https://api.yelp.com/v3/businesses',
     headers: {
         Authorization: 'Bearer ' + KEY
     }
-}))
+})
+
+// SPTM → EL ASI ESPERA QUE AUTHORIZATION VAYA EN CAPITAL LETTER
