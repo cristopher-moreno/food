@@ -2,7 +2,7 @@
 import React from 'react'
 import { View, Text, StyleSheet, TextInput } from 'react-native'
 import { Feather } from '@expo/vector-icons';
- 
+
 //BODY
 const SearchBar = ({ term, onTermChange, onTermSubmit }) => {
     return (
@@ -15,8 +15,9 @@ const SearchBar = ({ term, onTermChange, onTermSubmit }) => {
                 placeholder="Search"
                 autoCapitalize="none"
                 value={term}
-                onChangeText={(newTerm) => { onTermChange(newTerm) }} 
-                // onEndEditing={()=>{console.log('DONE')}}
+                onChangeText={(e) => { onTermChange(e) }}
+                
+                // video No.100 → MAKING THE REQUEST: https://www.udemy.com/course/the-complete-react-native-and-redux-course/learn/lecture/15707134#overview
                 onEndEditing={onTermSubmit}
             />
         </View>
