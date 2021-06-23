@@ -1,8 +1,6 @@
-//MODULES + LIBRARIES
+//IMPORTS
 import React, { useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-
-//EXPORTS → IMPORTS
 import SearchBar from '../components/SearchBar'
 import Yelp from '../api/yelp'
 
@@ -22,8 +20,15 @@ const SearchScreen = () => {
                     location: 'san jose'
                 }
             })
-            //console.log(response.data.businesses)
+            
+            //debug
+            let arr = response.data.businesses
+            arr.map((e)=>{
+                console.log(`debug → ${e.id}`)
+            })
+
             setApiResults(response.data.businesses)
+            
         } catch (error) { console.log(error) }
     }
 
@@ -31,10 +36,8 @@ const SearchScreen = () => {
         <View>
             <SearchBar
                 term={term}
-                onTermChange={(newTerm) => { setTerm(newTerm) }}    /* ← this is a new callback*/
-
-                /*onTermSubmit={() => { apiSearch() }}    ← this is a new callback*/
-                onTermSubmit={apiSearch}   /* ← ES6: Only needs to pass the callback*/
+                onTermChange={(e) => { setTerm(e) }}    
+                onTermSubmit={() => { apiSearch() }}
             />
             <Text>🌟 Search Screen</Text>
             <Text>Found → {apiResults.length} restaurants</Text>
@@ -42,8 +45,6 @@ const SearchScreen = () => {
     )
 }
 
-const styles = StyleSheet.create({
-
-})
+const styles = StyleSheet.create({ })
 
 export default SearchScreen

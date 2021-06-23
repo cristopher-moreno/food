@@ -1,13 +1,9 @@
-//MODULES + LIBRARIES
+//IMPORTS
 import React from 'react'
 import { View, Text, StyleSheet, TextInput } from 'react-native'
 import { Feather } from '@expo/vector-icons';
-
-//EXPORT → IMPORT
-
-
+ 
 //BODY
-//PASSING VALUES FROM A PARENT COMPONENT → CHILD COMPONENT AS AN ARGUMENT
 const SearchBar = ({ term, onTermChange, onTermSubmit }) => {
     return (
         <View style={styles.backgroundStyle}>
@@ -19,12 +15,9 @@ const SearchBar = ({ term, onTermChange, onTermSubmit }) => {
                 placeholder="Search"
                 autoCapitalize="none"
                 value={term}
-
-                /*onChangeText={(newTerm) => { onTermChange(newTerm) }} ← IT'S THE SAME*/
-                onChangeText={onTermChange}
-                /*onEndEditing={()=>{console.log('DONE')}}*/
+                onChangeText={(newTerm) => { onTermChange(newTerm) }} 
+                // onEndEditing={()=>{console.log('DONE')}}
                 onEndEditing={onTermSubmit}
-
             />
         </View>
     )

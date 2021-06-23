@@ -1,4 +1,4 @@
-//MODULES + LIBRARIES
+//IMPORTS
 import { StatusBar } from 'expo-status-bar'
 import * as React from 'react';
 import { StyleSheet, View, Button, Text, Animated } from 'react-native'
